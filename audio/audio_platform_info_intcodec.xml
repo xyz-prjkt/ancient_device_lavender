@@ -114,7 +114,7 @@
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" acdb_id="291"/>
         <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" acdb_id="307"/>
         <device name="SND_DEVICE_IN_VOICE_REC_HEADSET_MIC" acdb_id="307"/>
-        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="4"/>
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="2069"/>
         <device name="SND_DEVICE_IN_VOICE_DMIC" acdb_id="277"/>
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" acdb_id="293"/>
 		<device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC_ECHO" acdb_id="293"/>
@@ -277,6 +277,9 @@
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER_AND_VOICE_HEADPHONES" backend="speaker-and-headphones" interface="INT4_MI2S_RX-and-INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER_AND_VOICE_ANC_HEADSET" backend="speaker-and-headphones" interface="INT4_MI2S_RX-and-INT0_MI2S_RX"/>
         </backend_names>
+    <device_names>
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="handset-stereo-dmic-ef"/>
+    </device_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
     <microphone_characteristics>
         <microphone valid_mask="31" device_id="builtin_mic_1" type="AUDIO_DEVICE_IN_BUILTIN_MIC" address="bottom" location="AUDIO_MICROPHONE_LOCATION_MAINBODY"
@@ -649,4 +652,3 @@
         </input_snd_device>
     </snd_devices>
 </audio_platform_info>
-
