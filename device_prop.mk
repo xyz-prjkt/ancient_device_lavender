@@ -397,7 +397,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.max_virtual_display_dimension=4096
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.wcg_composition_dataspace=143261696
 
 #Storaged
  PRODUCT_PROPERTY_OVERRIDES += \
