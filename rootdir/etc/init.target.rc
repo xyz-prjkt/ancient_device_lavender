@@ -249,7 +249,8 @@ service vendor.cdsprpcd /vendor/bin/cdsprpcd
    user system
    group system
    disabled
-
+   group system radio drmrpc
+   
 service vendor.pd_mapper /system/vendor/bin/pd-mapper
      class core
 

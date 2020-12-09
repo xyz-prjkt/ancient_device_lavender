@@ -245,6 +245,8 @@ vendor/lib64/libsecureui_svcsock.so|e364290497862270cd01d9be84f0141ea92e92f9
 vendor/lib64/libSecureUILib.so|721de37d7f030ce475418960500def7e3628f01a
 vendor/lib64/libssd.so|d6758bd01b360be7bb68f35f56978a5e9a21d3c3
 vendor/lib64/libStDrvInt.so|8de13b46e8f21016c0fffaec34b0a2bacfccec04
+vendor/lib64/libtzdrmgenprov.so|6a6b5edb8c77bb51b65f3acb2fd0dedcc255a521
+vendor/lib64/libsdedrm.so|35060b2f7f93b1b3ab3b190e4365d135b9c2fd44
 
 # DRM (HDCP) - from LA.UM.8.2.r1-06300-sdm660.0
 vendor/lib/libmm-hdcpmgr.so|1369ce85b3c133c8d4d04167cd894df85212dcfa
@@ -268,6 +270,7 @@ vendor/lib64/libwvhidl.so|e310f4d361f73a942353779bd204f63f365c0659
 vendor/lib/mediadrm/libwvdrmengine.so|
 vendor/lib64/mediadrm/libwvdrmengine.so|3d04a3046d1ac489966d8ce9716e2adae7a8dea5
 vendor/lib/liboemcrypto.so|8ad53c1e62751c731a1837c29985d5dd8fff0de2
+vendor/lib/libtzdrmgenprov.so|8c525b28433757095f97ac80f9cbdcff7be37835
 
 # Keymaster - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/lib64/libkeymasterdeviceutils.so|b5d4819abb7dbd7908dfe7c6cfa5035e02b10383
