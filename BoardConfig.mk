@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2020 xyzprjkt
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,8 +23,19 @@
 # definition file).
 #
 
-# Common Tree Path
-COMMON_PATH := device/xiaomi/sdm660-common
+# Device Tree Path
+DT_PATH := device/xiaomi/lavender
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := lavender
+
+# AVB
+BOARD_AVB_ENABLE := true
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # A/B
 ifeq ($(ENABLE_AB), true)
@@ -47,7 +59,6 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 
 # Architecture
 TARGET_ARCH := arm64
@@ -83,7 +94,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DT_PATH)/bluetooth
 TARGET_USE_QTI_BT_STACK := true
 TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
@@ -118,16 +129,24 @@ TARGET_KERNEL_CLANG_VERSION := r383902
 BOARD_USES_QCNE := true
 
 # ConfigFS
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
+TARGET_FS_CONFIG_GEN := $(DT_PATH)/configs/config.fs
 
 # Display
 BOARD_USES_ADRENO := true
 TARGET_USES_HWC2 := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_ION := true
+TARGET_SCREEN_DENSITY := 420
+
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
+
+# Enable System As Root even for non-A/B from P onwards
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_KERNEL_CMDLINE += skip_initramfs rootwait ro init=/init
 
 # EXFAT
 TARGET_EXFAT_DRIVER := exfat
@@ -137,15 +156,15 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 3.0
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DT_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(DT_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DT_PATH)/compatibility_matrix.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sdm660
+TARGET_INIT_VENDOR_LIB := //$(DT_PATH):libinit_sdm660
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
 
@@ -154,6 +173,8 @@ USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
 USE_DEVICE_SPECIFIC_IPACFG_MGR := true
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
+TARGET_KERNEL_CONFIG := lavender-perf_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
 BOARD_KERNEL_CMDLINE += loop.max_part=16
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -190,6 +211,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Platform
+BOARD_VENDOR_PLATFORM := xiaomi-sdm660
+
 # Extra Symlink
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
@@ -213,13 +237,17 @@ TARGET_USES_QCOM_BSP := false
 
 # Recovery
 ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_A.qcom
+TARGET_RECOVERY_FSTAB := $(DT_PATH)/rootdir/etc/fstab_A.qcom
 else ifeq ($(ENABLE_AB), true)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB.qcom
+TARGET_RECOVERY_FSTAB := $(DT_PATH)/rootdir/etc/fstab_AB.qcom
 else
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DT_PATH)/rootdir/etc/fstab.qcom
 endif
 BOARD_HAS_LARGE_FILESYSTEM := true
+
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_lavender
+TARGET_RELEASETOOLS_EXTENSIONS := $(DT_PATH)
 
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -230,9 +258,9 @@ PROTOBUF_SUPPORTED := true
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 SELINUX_IGNORE_NEVERALLOWS := true
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(DT_PATH)/sepolicy/vendor
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DT_PATH)/sepolicy/public
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DT_PATH)/sepolicy/private
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
@@ -243,6 +271,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
+
+# Vendor Security patch level
+VENDOR_SECURITY_PATCH := 2020-12-05
 
 # VNDK
 BOARD_VNDK_VERSION := current
@@ -265,5 +296,8 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# WLAN MAC
+WLAN_MAC_SYMLINK := true
+
 # Inherit the proprietary files
--include vendor/xiaomi/sdm660-common/BoardConfigVendor.mk
+-include vendor/xiaomi/lavender/BoardConfigVendor.mk
