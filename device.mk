@@ -407,7 +407,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DT_PATH)/overlay \
-    $(DT_PATH)/overlay-lineage \
+    $(DT_PATH)/overlay-ancient \
     $(DT_PATH)/overlay-system
 
 # Ramdisk
