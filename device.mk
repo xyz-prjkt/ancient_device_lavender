@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2020 xyzprjkt
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -408,6 +409,7 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(DT_PATH)/overlay \
     $(DT_PATH)/overlay-ancient \
+    $(DT_PATH)/overlay-lavender \
     $(DT_PATH)/overlay-system
 
 # Ramdisk
