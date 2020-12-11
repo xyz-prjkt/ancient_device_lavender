@@ -21,7 +21,6 @@ allow vendor_init {
   audio_prop
   bservice_prop
   persist_debug_prop
-  vendor_persist_dpm_prop
   qcom_ims_prop
   reschedule_service_prop
   thermal_engine_prop
