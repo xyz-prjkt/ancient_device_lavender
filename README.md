@@ -1,12 +1,10 @@
-Copyright (C) 2020 The Android Open Source Project
-Copyright (C) 2020 xyzscape LLC
-Copyright (C) 2020 xyzprjkt
+## Copyright (C) 2020 xyzprjkt
 
-The Redmi Note 7 (codenamed _"lavender"_) are high-end mid-range smartphones from Xiaomi.
+Redmi Note 7 (codenamed _"lavender"_) adalah smartphone kelas menengah kelas atas dari Xiaomi.
 
-Xiaomi Redmi Note 7 was announced and released in January 2019.
+Xiaomi Redmi Note 7 diumumkan dan dirilis pada Januari 2019.
 
-## Device specifications
+## Spesifikasi
 
 | Device       | Xiaomi Redmi Note 7                             |
 | -----------: | :---------------------------------------------- |
