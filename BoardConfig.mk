@@ -130,7 +130,7 @@ USE_OPENGL_RENDERER := true
 TARGET_SCREEN_DENSITY := 420
 
 # DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
