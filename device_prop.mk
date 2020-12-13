@@ -110,14 +110,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.vbat.enable=true \
     vendor.audio.feature.wsa.enable=false
 
-ifneq ($(filter jason,$(TARGET_DEVICE)),)
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.feature.spkr_prot.enable=false
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.feature.spkr_prot.enable=true
-endif
-
 # Apex
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.apex.updatable=true

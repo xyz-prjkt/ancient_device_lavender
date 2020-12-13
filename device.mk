@@ -26,59 +26,11 @@
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := sdm660
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product-if-exists, build/target/product/embedded.mk)
-
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
-
-# Inherit proprietary files
-$(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
-
 # Device Tree Path
 DT_PATH := device/xiaomi/lavender
 
 # Inherit properties
 $(call inherit-product, $(DT_PATH)/device_prop.mk)
-
-# A/B
-ifeq ($(ENABLE_AB), true)
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script
-
-# Boot control
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service \
-    bootctrl.sdm660 \
-    bootctrl.sdm660.recovery
-
-# Boot control debug
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-# Update engine
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_HOST_PACKAGES += \
-    brillo_update_payload
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-endif
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -166,7 +118,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Boot animation
-TARGET_BOOTANIMATION_SIZE := 1080p
+TARGET_BOOT_ANIMATION_RES := 1080p
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
@@ -423,13 +375,8 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(DT_PATH)/overlay-system
 
 # Powerhint
-ifeq ($(EAS_POWERHINT_VARIANT),sdm636)
 PRODUCT_COPY_FILES += \
-    $(DT_PATH)/power-libperfmgr/sdm636_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-else
-    PRODUCT_COPY_FILES += \
     $(DT_PATH)/power-libperfmgr/sdm660_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-endif
     
 # Permissions
 PRODUCT_COPY_FILES += \
