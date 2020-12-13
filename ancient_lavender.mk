@@ -38,6 +38,9 @@ $(call inherit-product, vendor/ancient/config/common_full_phone.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Ancient Identifier.
+ANCIENT_OFFICIAL := true
+
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="lavender" \
