@@ -41,20 +41,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Ancient Identifier.
 ANCIENT_OFFICIAL := true
 
-# Build Fingerprint
+# Device Identifier.
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="lavender" \
-    PRODUCT_NAME="lavender" \
-    PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys" 
+    PRODUCT_NAME="lavender"
 
-# Device identifier
+# Prod Identifier.
 PRODUCT_NAME := ancient_lavender
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7
-
 TARGET_VENDOR_PRODUCT_NAME := lavender
-
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Fingerprint
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys
+BUILD_DESCRIPTION := redfin-user 11 RQ1A.201205.010 6953398 release-keys
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
