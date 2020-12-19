@@ -34,7 +34,7 @@
 #define RPM_CLK 19200
 
 #ifndef TAP_TO_WAKE_NODE
-#define TAP_TO_WAKE_NODE "/sys/touchpanel/double_tap"
+#define TAP_TO_WAKE_NODE "/proc/tp_gesture"
 #endif
 
 extern struct stat_pair rpm_stat_map[];

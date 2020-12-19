@@ -176,8 +176,8 @@ on boot
     write /dev/cpuset/system-background/cpus 0-3
     
     # Touchpanel
-    chown system system /sys/touchpanel/double_tap
-    chmod 0664 /sys/touchpanel/double_tap
+    chown system system /proc/tp_gesture
+    chmod 0664 /proc/tp_gesture
 
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
