@@ -25,13 +25,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on early-init
-    write /sys/module/dm_verity/parameters/prefetch_cluster 0
-
 on boot
 # Set permission for double tap to wake support
-    chmod 0660 /sys/touchpanel/double_tap
-    chown system system /sys/touchpanel/double_tap
+    chmod 0660 /proc/tp_gesture
+    chown system /proc/tp_gesture
 
 # Camera ID
     setprop persist.vendor.camera.exif.model "Redmi Note 7"
