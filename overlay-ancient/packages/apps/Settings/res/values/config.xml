@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- AncientOS Device Info -->
+    <bool name="config_supportSmartCharging">true</bool>
+    <bool name="config_supportBatteryHealth">true</bool>
+
+    <!-- Battery Health Node -->
+    <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full</string>
+	<string name="config_batCurCap">/sys/class/power_supply/bms/charge_now_raw</string>
+	<string name="config_batChargeCycle">/sys/class/power_supply/bms/cycle_count</string>
+
+</resources>
