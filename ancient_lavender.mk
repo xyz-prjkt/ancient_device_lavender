@@ -40,6 +40,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Ancient Identifier.
 ANCIENT_OFFICIAL := true
+TARGET_USES_BLUR := true
 
 # Device Identifier.
 PRODUCT_BUILD_PROP_OVERRIDES += \
