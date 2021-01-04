@@ -588,3 +588,9 @@ PRODUCT_BOOT_JARS += \
 # DeviceSettings
 PRODUCT_PACKAGES += \
    DeviceSettings
+
+# xyz-prebuilts
+PRODUCT_PACKAGES += \
+    G-UIRadiusAndroid \
+    G-UIRadiusSystemUI \
+    G-UIStatusbarHeight
