@@ -35,13 +35,13 @@ int main() {
     android::status_t status = service->registerAsService();
 
     if (status != android::OK) {
-        LOG(ERROR) << "Cannot register USB HAL service";
+        LOG(ERROR) << "xyzUSB HALs: Cannot register USB HAL service";
         return 1;
     }
 
-    LOG(INFO) << "USB HAL Ready.";
+    LOG(INFO) << "xyzUSB HALs: USB HAL Ready.";
     joinRpcThreadpool();
     // Under noraml cases, execution will not reach this line.
-    LOG(ERROR) << "USB HAL failed to join thread pool.";
+    LOG(ERROR) << "xyzUSB HALs: USB HAL failed to join thread pool.";
     return 1;
 }

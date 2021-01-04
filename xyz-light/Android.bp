@@ -1,5 +1,4 @@
-//
-// Copyright (C) 2017-2018 The LineageOS Project
+// Copyright (C) 2018 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,24 +13,18 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660.rc"],
-    vendor: true,
-    relative_install_path: "hw",
-    srcs: [
-        "BiometricsFingerprint.cpp",
-        "service.cpp",
-    ],
-
+    name: "xyz_xyzuan.android.hardware.light@2.0-service.xiaomi_lavender",
+    init_rc: ["xyz_xyzuan.android.hardware.light@2.0-service.xiaomi_lavender.rc"],
+    srcs: ["service.cpp", "Light.cpp"],
     shared_libs: [
-        "libcutils",
-        "liblog",
-        "libhidlbase",
+        "libbase",
         "libhardware",
+        "libhidlbase",
+        "liblog",
         "libutils",
-        "android.hardware.biometrics.fingerprint@2.1",
+        "android.hardware.light@2.0",
     ],
-    proprietary: true,
-
+    relative_install_path : "hw",
+    vendor: true,
 }

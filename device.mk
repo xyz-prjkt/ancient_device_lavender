@@ -96,10 +96,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0-service
 
-# Biometrics
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     BluetoothQti \
@@ -305,10 +301,6 @@ PRODUCT_COPY_FILES += \
     $(DT_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl \
     $(DT_PATH)/configs/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_sdm660
-
 # Media
 PRODUCT_COPY_FILES += \
     $(DT_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -367,10 +359,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(DT_PATH)/overlay-system
 
-# Powerhint
-PRODUCT_COPY_FILES += \
-    $(DT_PATH)/power-libperfmgr/sdm660_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-    
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -416,10 +404,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_sdm660-libperfmgr
 
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
@@ -535,10 +519,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    ThermalController
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.xiaomi_sdm660
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -594,3 +574,14 @@ PRODUCT_PACKAGES += \
     G-UIRadiusAndroid \
     G-UIRadiusSystemUI \
     G-UIStatusbarHeight
+
+# xyz-xyzuan HALs
+PRODUCT_PACKAGES += \
+    xyz_xyzuan.android.hardware.light@2.0-service.xiaomi_lavender \
+    xyz_xyzuan.android.hardware.power@1.3-service.xiaomi_lavender-libperfmgr \
+    xyz_xyzuan.android.hardware.usb@1.0-service.xiaomi_lavender \
+    xyz_xyzuan.android.hardware.biometrics.fingerprint@2.1-service.xiaomi_lavender
+
+PRODUCT_COPY_FILES += \
+    $(DT_PATH)/xyz-power/lavender_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    

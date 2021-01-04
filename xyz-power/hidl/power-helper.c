@@ -28,7 +28,7 @@
  */
 
 #define LOG_NIDEBUG 0
-#define LOG_TAG "android.hardware.power@1.3-service.xiaomi_sdm660-libperfmgr"
+#define LOG_TAG "xyz_xyzuan.android.hardware.power@1.3-service.xiaomi_lavender-libperfmgr"
 
 #include <errno.h>
 #include <inttypes.h>

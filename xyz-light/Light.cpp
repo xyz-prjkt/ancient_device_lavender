@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.xiaomi_sdm660"
+#define LOG_TAG "xyz_xyzuan.android.hardware.light@2.0-service.xiaomi_lavender"
 
 #include <android-base/logging.h>
 

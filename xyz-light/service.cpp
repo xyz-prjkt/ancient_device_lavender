@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.xiaomi_sdm660"
+#define LOG_TAG "xyz_xyzuan.android.hardware.light@2.0-service.xiaomi_lavender"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
@@ -38,14 +38,14 @@ int main() {
 
     status_t status = service->registerAsService();
     if (status != OK) {
-        LOG(ERROR) << "Cannot register Light HAL service.";
+        LOG(ERROR) << "Cannot register xyzLight HAL service.";
         return 1;
     }
 
-    LOG(DEBUG) << "Light HAL service ready.";
+    LOG(DEBUG) << "xyzLight HAL service ready.";
 
     joinRpcThreadpool();
 
-    LOG(ERROR) << "Light HAL service failed to join thread pool.";
+    LOG(ERROR) << "xyzLight HAL service failed to join thread pool.";
     return 1;
 }
