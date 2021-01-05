@@ -1,5 +1,7 @@
 ## Copyright (C) 2020 xyzprjkt
 
+![Xiaomi Redmi Note 7](https://raw.githubusercontent.com/xyz-prjkt/ancient_device_lavender/11/xyz-prebuilts/lavender.png)
+
 Redmi Note 7 (codenamed _"lavender"_) adalah smartphone kelas menengah kelas atas dari Xiaomi.
 
 Xiaomi Redmi Note 7 diumumkan dan dirilis pada Januari 2019.
@@ -20,7 +22,3 @@ Xiaomi Redmi Note 7 diumumkan dan dirilis pada Januari 2019.
 | Rear camera 1 | 48MP, 1.6-micron pixels, f/1.8 Dual LED flash  |
 | Rear camera 2 | 5MP, 1.6-micron pixels, f/1.8                  |
 | Front camera  | 13MP                                           |
-
-## Device picture
-
-![Xiaomi Redmi Note 7](https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note7/gallery1-2.jpg)
