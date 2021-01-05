@@ -14,6 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <color name="homepage_parts_background">#FF6700</color>
-    <color name="homepage_parts_icon">#FFFFFF</color>
+    <color name="homepage_parts_background">#F5F5F5</color>
+    <color name="homepage_parts_icon">#FF6700</color>
 </resources>
