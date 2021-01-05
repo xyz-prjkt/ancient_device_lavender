@@ -171,10 +171,6 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
 
-# DeviceDoze
-PRODUCT_PACKAGES += \
-    DeviceDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -565,9 +561,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-# DeviceSettings
+# xyz-Zone
 PRODUCT_PACKAGES += \
-   DeviceSettings
+   xyzzone
 
 # xyz-prebuilts
 PRODUCT_PACKAGES += \
