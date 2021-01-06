@@ -1,4 +1,4 @@
-## Copyright (C) 2020 xyzprjkt
+## Copyright (C) 2020-2021 a xyzprjkt LLC
 
 ![Xiaomi Redmi Note 7](https://raw.githubusercontent.com/xyz-prjkt/ancient_device_lavender/11/xyz-prebuilts/lavender.png)
 
