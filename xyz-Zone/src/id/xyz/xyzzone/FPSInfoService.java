@@ -104,6 +104,7 @@ public class FPSInfoService extends Service {
             mOnlinePaint.setAntiAlias(true);
             mOnlinePaint.setTextSize(textSize);
             mOnlinePaint.setColor(Color.YELLOW);
+            mOnlinePaint.setShadowLayer(8.0f, 0.0f, 0.0f, Color.BLACK);
 
             mAscent = mOnlinePaint.ascent();
             float descent = mOnlinePaint.descent();
