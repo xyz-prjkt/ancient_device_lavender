@@ -93,9 +93,9 @@ public class FPSInfoService extends Service {
             float density = c.getResources().getDisplayMetrics().density;
             int paddingPx = Math.round(5 * density);
             setPadding(paddingPx, paddingPx, paddingPx, paddingPx);
-            setBackgroundColor(Color.argb(0x60, 0, 0, 0));
+            setBackgroundColor(Color.argb(0x0, 0, 0, 0));
 
-            final int textSize = Math.round(12 * density);
+            final int textSize = Math.round(17 * density);
 
             Typeface typeface = Typeface.create("google-sans", Typeface.BOLD);
 
@@ -103,8 +103,7 @@ public class FPSInfoService extends Service {
             mOnlinePaint.setTypeface(typeface);
             mOnlinePaint.setAntiAlias(true);
             mOnlinePaint.setTextSize(textSize);
-            mOnlinePaint.setColor(Color.WHITE);
-            mOnlinePaint.setShadowLayer(5.0f, 0.0f, 0.0f, Color.BLACK);
+            mOnlinePaint.setColor(Color.YELLOW);
 
             mAscent = mOnlinePaint.ascent();
             float descent = mOnlinePaint.descent();
