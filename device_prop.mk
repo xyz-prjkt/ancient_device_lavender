@@ -378,8 +378,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.use_data_netmgrd=true \
     persist.vendor.iwlan.enable=true \
-    persist.vendor.radio.data_con_rprt=1
-
+    persist.vendor.radio.add_power_save=1
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
