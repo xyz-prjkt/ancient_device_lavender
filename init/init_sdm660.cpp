@@ -118,8 +118,8 @@ void vendor_load_persist_properties()
 }
 void vendor_load_properties()
 {
-  property_override("ro.build.description", "lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys");
-  property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:11/RQ1A.201205.008/6943376:user/release-keys");
+  property_override("ro.build.description", "sunfish-user 11 RQ1A.210105.002 6985033 release-keys");
+  property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/sunfish/sunfish:11/RQ1A.210105.002/6985033:user/release-keys");
   
    std::string product = GetProperty("ro.product.vendor.device", "");	
    if (product.find("whyred") != std::string::npos)
