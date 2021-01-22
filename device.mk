@@ -511,10 +511,6 @@ PRODUCT_PACKAGES += \
     libipanat \
     liboffloadhal
 
-# Thermal Controller
-PRODUCT_PACKAGES += \
-   ThermalController
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
