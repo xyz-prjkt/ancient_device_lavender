@@ -559,7 +559,7 @@ PRODUCT_BOOT_JARS += \
 
 # xyz-Zone
 PRODUCT_PACKAGES += \
-   xyzzone
+   xRage
 
 # xyz-prebuilts
 PRODUCT_PACKAGES += \

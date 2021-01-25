@@ -15,9 +15,16 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory
+
+    <Preference
+        android:layout="@layout/xrage_header"
+        android:selectable="false"/>
+        
+    <Preference
+        android:layout="@layout/xrage_preference_category"
+        android:selectable="false"
         android:key="vibration"
-        android:title="@string/vibration_title">
+        android:title="@string/vibration_title"/>
 
         <id.xyz.xyzzone.preferences.VibrationSeekBarPreference
             android:defaultValue="80"
@@ -26,11 +33,12 @@
             android:title="@string/vibration_strength_title"
             app:min="1"
             app:units="%" />
-    </PreferenceCategory>
 
-    <PreferenceCategory
+    <Preference
+        android:layout="@layout/xrage_preference_category"
+        android:selectable="false"
         android:key="notification_led"
-        android:title="@string/notification_title">
+        android:title="@string/notification_title"/>
         <id.xyz.xyzzone.preferences.NotificationLedSeekBarPreference
             android:key="notification_led_brightness"
             android:title="@string/notification_led_title"
@@ -38,11 +46,36 @@
             app:min="1"
             app:units="%"
             android:defaultValue="100" />
-    </PreferenceCategory>
     
-    <PreferenceCategory
-       android:key="audio_amplify"
-       android:title="@string/audio_amplify">
+    <Preference
+        android:layout="@layout/xrage_preference_category"
+        android:selectable="false"
+        android:key="audio_amplify"
+        android:title="@string/audio_amplify"/>
+
+        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
+            android:defaultValue="true"
+            android:key="dirac_enabled"
+            android:summary="@string/dirac_summary"
+            android:title="@string/dirac_title" />
+
+        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
+            android:defaultValue="true"
+            android:dependency="dirac_enabled"
+            android:entries="@array/dirac_headset_pref_entries"
+            android:entryValues="@array/dirac_headset_pref_values"
+            android:key="dirac_headset_pref"
+            android:summary="%s"
+            android:title="@string/dirac_headset_title" />
+
+        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
+            android:defaultValue="0,0,0,0,0,0,0"
+            android:dependency="dirac_enabled"
+            android:entries="@array/dirac_preset_pref_entries"
+            android:entryValues="@array/dirac_preset_pref_values"
+            android:key="dirac_preset_pref"
+            android:summary="%s"
+            android:title="@string/dirac_preset_title" />
 
         <id.xyz.xyzzone.preferences.CustomSeekBarPreference
             android:defaultValue="0"
@@ -59,11 +92,12 @@
             app:min="-10"
             android:icon="@drawable/ic_mic"
             android:title="@string/mic_gain"/>
-    </PreferenceCategory>
 
-    <PreferenceCategory
+    <Preference
+        android:layout="@layout/xrage_preference_category"
+        android:selectable="false"
         android:key="display"
-        android:title="@string/display_title">
+        android:title="@string/display_title"/>
 
         <Preference
             android:key="device_doze"
@@ -94,11 +128,11 @@
             android:persistent="true"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
+    <Preference
+        android:layout="@layout/xrage_preference_category"
+        android:selectable="false"
         android:key="thermal_profile"
-        android:title="@string/thermal_profile_title">
+        android:title="@string/thermal_profile_title"/>
 
         <id.xyz.xyzzone.preferences.SecureSettingListPreference
             android:defaultValue="0"
@@ -109,7 +143,6 @@
             android:summary="@string/thermal_summary"
             android:title="@string/thermal_title"
             android:icon="@drawable/ic_thermal" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="hall_wakeup"
