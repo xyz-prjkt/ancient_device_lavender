@@ -75,12 +75,8 @@ public class XYZzone extends PreferenceFragment implements
     public static final String PREF_THERMAL = "thermal";
     public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
 
-    private static final String CATEGORY_HALL_WAKEUP = "hall_wakeup";
-    public static final String PREF_HALL_WAKEUP = "hall";
     public static final String HALL_WAKEUP_PATH = "/sys/module/hall/parameters/hall_toggle";
     public static final String HALL_WAKEUP_PROP = "persist.service.folio_daemon";
-
-    private static final String DEVICE_DOZE_PACKAGE_NAME = "com.advanced.settings.doze";
 
     private SecureSettingListPreference mTHERMAL;
     private SecureSettingSwitchPreference mEnableDirac;
@@ -111,11 +107,6 @@ public class XYZzone extends PreferenceFragment implements
         } else {
           getPreferenceScreen().removePreference(findPreference(CATEGORY_AUDIO_AMPLIFY));
         }
-
-        PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-        if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
-            displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
-        }
         
         SecureSettingSwitchPreference fpsInfo = (SecureSettingSwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setOnPreferenceChangeListener(this);
@@ -132,14 +123,6 @@ public class XYZzone extends PreferenceFragment implements
         mTHERMAL.setValue(FileUtils.getValue(THERMAL_PATH));
         mTHERMAL.setSummary(mTHERMAL.getEntry());
         mTHERMAL.setOnPreferenceChangeListener(this);
-
-        if (FileUtils.fileWritable(HALL_WAKEUP_PATH)) {
-            SecureSettingSwitchPreference hall = (SecureSettingSwitchPreference) findPreference(PREF_HALL_WAKEUP);
-            hall.setChecked(FileUtils.getValue(HALL_WAKEUP_PATH).equals("Y"));
-            hall.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_HALL_WAKEUP));
-        }
 
         boolean enhancerEnabled;
         try {
@@ -192,11 +175,6 @@ public class XYZzone extends PreferenceFragment implements
                 mTHERMAL.setValue((String) value);
                 mTHERMAL.setSummary(mTHERMAL.getEntry());
                 FileUtils.setValue(THERMAL_PATH, (String) value);
-                break;
-
-            case PREF_HALL_WAKEUP:
-                FileUtils.setValue(HALL_WAKEUP_PATH, (boolean) value ? "Y" : "N");
-                FileUtils.setProp(HALL_WAKEUP_PROP, (boolean) value);
                 break;
 
             case PREF_KEY_FPS_INFO:
