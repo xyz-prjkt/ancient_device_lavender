@@ -26,12 +26,10 @@ vendor/lib64/libsdsprpc.so|031c11dde8653ba3fb489d8216170822dfd8e691
 vendor/lib64/libssc_default_listener.so|c7bac4dedafcd262267970007ce04dfcc8ca1e42
 
 # ADSP Modules - from LA.UM.8.2.r1-06700-sdm660.0
-vendor/lib/rfsa/adsp/dirac_resource.dar|7728d5b2ee2927a01df5bd6d7edae3736186c844
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so|677d2932dac248049f031fc5893163e22b49439a
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so|26fb64a92d48e801a31a867976d325efa366a255
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so|05776246445316aea822eaa9cb6ae7a47b23c9aa
 vendor/lib/rfsa/adsp/libapps_mem_heap.so|fd362c6b0e30f62cc3fc4566855f46706d2c3c50
-vendor/lib/rfsa/adsp/libdirac-capiv2.so|e56031dfaee094d5267e3cc16625cfceaa07cc27
 vendor/lib/rfsa/adsp/libdspCV_skel.so|a788855fe98d5f6ea73d2693c983efb29165eae1
 vendor/lib/rfsa/adsp/libfastcvadsp.so|603711dc1af1f1952d8978a5b494b1541b24c54c
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|a06a3f52e89d219d2da0c7205e714cd7429b267c
@@ -42,6 +40,10 @@ vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|99752b14bc669589f598b2c555af9
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|d2174a2a4a680e93ee4262b5e6d99fd3c398620c
 vendor/lib/rfsa/adsp/libscveT2T_skel.so|487f830aca26c85ef79c8b599b2f03668ab732b5
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so|2da97f61c1d14f1f9a38aecd8ab89a1f6fa8d991
+
+# ADSP Modules -  from jasmine-user-10-QKQ1.190910.002-V11.0.19.0.QDIMIXM
+vendor/lib/rfsa/adsp/dirac_resource.dar|7728d5b2ee2927a01df5bd6d7edae3736186c844
+vendor/lib/rfsa/adsp/libdirac-capiv2.so|e56031dfaee094d5267e3cc16625cfceaa07cc27
 
 # CDSP - from LA.UM.8.2.r1-06700-sdm660.0
 lib/libcdsprpc_system.so|111797b70a5274be1af0b343ef54966478bfcd39
@@ -265,10 +267,10 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|1ac676dca4c81094b254b62f1b608e4
 
 # DRM-Widevine
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|
-vendor/lib64/libwvhidl.so|e310f4d361f73a942353779bd204f63f365c0659
-vendor/lib/mediadrm/libwvdrmengine.so|
-vendor/lib64/mediadrm/libwvdrmengine.so|3d04a3046d1ac489966d8ce9716e2adae7a8dea5
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
+vendor/lib64/libwvhidl.so|38677623330ec145a62afdef110c713c9492671c
+vendor/lib/mediadrm/libwvdrmengine.so|a8bdbbfb3aa222095f1cb7658ec5c46fa41dd560
+vendor/lib64/mediadrm/libwvdrmengine.so|80280a2292db04a1eb3750df6897dea96f0f62f5
 vendor/lib/liboemcrypto.so|8ad53c1e62751c731a1837c29985d5dd8fff0de2
 vendor/lib/libtzdrmgenprov.so|8c525b28433757095f97ac80f9cbdcff7be37835
 
@@ -738,13 +740,13 @@ vendor/lib/libsubsystem_control.so|fe08da9f6a0e73a97231055c4ca8279a68432476
 vendor/lib64/libSubSystemShutdown.so|c934b2df57be86fdfb9bdf2046f9289af5e7a62c
 vendor/lib64/libsubsystem_control.so|b2e8c7eb9d999137ae99ea38f85d7dac59c6dcc2
 
-# Thermal - from wayne Miui 9.7.4
-vendor/bin/thermal-engine|0be3686204fc600f8dd8607fff10cd7fd273186e
-vendor/lib/libthermalfeature.so|1f1eb616ba26b309a2fda7de40c2163a4acaaa35
-vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
-vendor/lib64/libthermalioctl.so|7c7a784d8ead3d932d164cfc953b09e621060d90
--vendor/lib/libthermalclient.so|d5c6c82b15423e95e991d757bab1b4a27fb88848
--vendor/lib64/libthermalclient.so|3412ce67da6a58d7f44a65e6b8af8cc5bfb9f506
+# Thermal - from jasmine-user-10-QKQ1.190910.002-V11.0.19.0.QDIMIXM
+vendor/bin/thermal-engine|459c3fb5ab99ac95cff15387358c1d0e239a5735
+vendor/lib/libthermalfeature.so|b2a90496eb99301cc0f065fe97782358858668a3
+vendor/lib64/libthermalfeature.so|1c408911610e5b6a11853aff1900860f9e9a861f
+vendor/lib64/libthermalioctl.so|2f0ee866e9059b1df9ca7b63815591354e7c77d8
+-vendor/lib/libthermalclient.so|c3aecc7610e8f5775a6f6af2ff7790bef74380a1
+-vendor/lib64/libthermalclient.so|84072e150722cc668320f07a75cb8695ce1a79b0
 
 # Time services - from LA.UM.9.6.2.r1-03300-89xx.0
 -vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
