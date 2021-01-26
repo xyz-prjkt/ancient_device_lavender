@@ -562,9 +562,6 @@ PRODUCT_PACKAGES += \
 
 # xyz-prebuilts
 PRODUCT_PACKAGES += \
-    G-UIRadiusAndroid \
-    G-UIRadiusSystemUI \
-    G-UIStatusbarHeight
 
 # xyz-xyzuan HALs
 PRODUCT_PACKAGES += \
