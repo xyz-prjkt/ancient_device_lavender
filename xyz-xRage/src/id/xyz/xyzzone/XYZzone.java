@@ -56,6 +56,11 @@ public class XYZzone extends PreferenceFragment implements
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
+    // Dirac
+    public static final String PREF_ENABLE_DIRAC = "dirac_enabled";
+    public static final String PREF_HEADSET = "dirac_headset_pref";
+    public static final String PREF_PRESET = "dirac_preset_pref";
+
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 116;
     public static final int MAX_VIBRATION = 3596;
@@ -74,6 +79,9 @@ public class XYZzone extends PreferenceFragment implements
     public static final String HALL_WAKEUP_PROP = "persist.service.folio_daemon";
 
     private SecureSettingListPreference mTHERMAL;
+    private SecureSettingSwitchPreference mEnableDirac;
+    private SecureSettingListPreference mHeadsetType;
+    private SecureSettingListPreference mPreset;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -116,6 +124,30 @@ public class XYZzone extends PreferenceFragment implements
         mTHERMAL.setSummary(mTHERMAL.getEntry());
         mTHERMAL.setOnPreferenceChangeListener(this);
 
+        boolean enhancerEnabled;
+        try {
+            enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
+        } catch (java.lang.NullPointerException e) {
+            getContext().startService(new Intent(getContext(), DiracService.class));
+            try {
+                enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
+            } catch (NullPointerException ne) {
+                // Avoid crash
+                ne.printStackTrace();
+                enhancerEnabled = false;
+            }
+        }
+
+        mEnableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
+        mEnableDirac.setOnPreferenceChangeListener(this);
+        mEnableDirac.setChecked(enhancerEnabled);
+
+        mHeadsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
+        mHeadsetType.setOnPreferenceChangeListener(this);
+
+        mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
+        mPreset.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -155,6 +187,33 @@ public class XYZzone extends PreferenceFragment implements
                 }
                 break;
                 
+            case PREF_ENABLE_DIRAC:
+                try {
+                    DiracService.sDiracUtils.setEnabled((boolean) value);
+                } catch (java.lang.NullPointerException e) {
+                    getContext().startService(new Intent(getContext(), DiracService.class));
+                    DiracService.sDiracUtils.setEnabled((boolean) value);
+                }
+                break;
+
+            case PREF_HEADSET:
+                try {
+                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
+                } catch (java.lang.NullPointerException e) {
+                    getContext().startService(new Intent(getContext(), DiracService.class));
+                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
+                }
+                break;
+
+            case PREF_PRESET:
+                try {
+                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
+                } catch (java.lang.NullPointerException e) {
+                    getContext().startService(new Intent(getContext(), DiracService.class));
+                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
+                }
+                break;
+
             default:
                 break;
         }
