@@ -59,7 +59,7 @@
             android:summary="@string/dirac_summary"
             android:title="@string/dirac_title" />
 
-        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
+        <id.xyz.xyzzone.preferences.SecureSettingListPreference
             android:defaultValue="true"
             android:dependency="dirac_enabled"
             android:entries="@array/dirac_headset_pref_entries"
@@ -68,7 +68,7 @@
             android:summary="%s"
             android:title="@string/dirac_headset_title" />
 
-        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
+        <id.xyz.xyzzone.preferences.SecureSettingListPreference
             android:defaultValue="0,0,0,0,0,0,0"
             android:dependency="dirac_enabled"
             android:entries="@array/dirac_preset_pref_entries"
@@ -144,15 +144,4 @@
             android:title="@string/thermal_title"
             android:icon="@drawable/ic_thermal" />
 
-    <PreferenceCategory
-        android:key="hall_wakeup"
-        android:title="@string/hall_wakeup_title">
-
-        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
-            android:defaultValue="true"
-            android:key="hall"
-            android:summary="@string/hall_wakeup_summary"
-            android:title="@string/hall_title"
-            android:icon="@drawable/ic_flip" />
-    </PreferenceCategory>
 </PreferenceScreen>
