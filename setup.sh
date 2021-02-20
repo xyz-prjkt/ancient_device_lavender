@@ -1,0 +1,1 @@
+git clone https://github.com/xyz-prjkt/ancient_vendor_lavender ../../../vendor/xiaomi/lavender && git clone  https://github.com/stormbreaker-project/kernel_xiaomi_lavender ../../../kernel/xiaomi/lavender -b eas-oldcam
