@@ -711,6 +711,10 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so|45fd8c212f51977663082b496755911c986
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so|1673fd7b807dcc317cc73c82c2773d5bbb0302df
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so|780288d1d8d79fa16fbbe9bce6edaa4e1424cdb1
 
+# QTI Display - from LA.UM.9.6.2.r1-03300-89xx.0
+vendor/lib/libdisplayconfig.qti.so|7992c42b4cc784348381d824037216cff9922b22
+vendor/lib64/libdisplayconfig.qti.so|ed995e14b48117b77fe8a496d00d3f879b8c7dc3
+
 # Sensors - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|bda110fc8102be6f88bd0e364819d15d9c0c3744
 product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|67620ca191213b83e898ee401807eb8385b0020d
