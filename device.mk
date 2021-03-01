@@ -29,13 +29,8 @@ PRODUCT_BOARD_PLATFORM := sdm660
 # Device Tree Path
 DT_PATH := device/xiaomi/lavender
 
-# Properties
-$(call inherit-product, $(DT_PATH)/xyz-prop/device_prop.mk)
-$(call inherit-product, $(DT_PATH)/xyz-prop/vendor_prop.mk)
-
-TARGET_PRODUCT_PROP += $(DT_PATH)/xyz-prop/product.prop
-TARGET_SYSTEM_PROP += $(DT_PATH)/xyz-prop/system.prop
-TARGET_SYSTEM_EXT_PROP += $(DT_PATH)/xyz-prop/system_ext.prop
+# Inherit properties
+$(call inherit-product, $(DT_PATH)/device_prop.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
