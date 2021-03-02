@@ -33,3 +33,7 @@ set_prop(vendor_init, vendor_camera_prop)
 set_prop(vendor_init, freq_prop)
 set_prop(vendor_init, fm_prop)
 set_prop(vendor_init, vendor_power_prop)
+
+# Dirac
+allow vendor_init dirac_prop:property_service set;
+

@@ -1,0 +1,2 @@
+allow toolbox dirac_prop:property_service { set };
+
