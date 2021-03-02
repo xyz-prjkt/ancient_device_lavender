@@ -29,8 +29,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/lavender/device.mk)
 
-# Inherit proprietary files
+# Inherit Lavender proprietary files
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
+$(call inherit-product, vendor/xiaomi/lavender/sdm660-vendor.mk)
 
 # Inherit some common AOSP stuff.
 $(call inherit-product, vendor/ancient/config/common_full_phone.mk)
