@@ -53,30 +53,6 @@
         android:key="audio_amplify"
         android:title="@string/audio_amplify"/>
 
-        <id.xyz.xyzzone.preferences.SecureSettingSwitchPreference
-            android:defaultValue="true"
-            android:key="dirac_enabled"
-            android:summary="@string/dirac_summary"
-            android:title="@string/dirac_title" />
-
-        <id.xyz.xyzzone.preferences.SecureSettingListPreference
-            android:defaultValue="true"
-            android:dependency="dirac_enabled"
-            android:entries="@array/dirac_headset_pref_entries"
-            android:entryValues="@array/dirac_headset_pref_values"
-            android:key="dirac_headset_pref"
-            android:summary="%s"
-            android:title="@string/dirac_headset_title" />
-
-        <id.xyz.xyzzone.preferences.SecureSettingListPreference
-            android:defaultValue="0,0,0,0,0,0,0"
-            android:dependency="dirac_enabled"
-            android:entries="@array/dirac_preset_pref_entries"
-            android:entryValues="@array/dirac_preset_pref_values"
-            android:key="dirac_preset_pref"
-            android:summary="%s"
-            android:title="@string/dirac_preset_title" />
-
         <id.xyz.xyzzone.preferences.CustomSeekBarPreference
             android:defaultValue="0"
             android:key="headphone_gain"
@@ -93,23 +69,21 @@
             android:icon="@drawable/ic_mic"
             android:title="@string/mic_gain"/>
 
+        <Preference
+            android:key="top_level_theme"
+            android:title="Xiaomi Dirac">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.xiaomi.dirac"
+                android:targetClass="com.xiaomi.dirac.DiracActivity" />
+    </Preference>
+
     <Preference
         android:layout="@layout/xrage_preference_category"
         android:selectable="false"
         android:key="display"
         android:title="@string/display_title"/>
 
-        <Preference
-            android:key="device_doze"
-            android:persistent="false"
-            android:summary="@string/advanced_doze_summary"
-            android:title="@string/ambient_display"
-            android:icon="@drawable/ic_doze">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="com.advanced.settings.doze.DozeSettingsActivity"
-                android:targetPackage="com.advanced.settings.doze" />
-        </Preference>
         <Preference
             android:key="device_kcal"
             android:persistent="false"
