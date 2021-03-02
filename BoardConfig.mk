@@ -223,9 +223,6 @@ endif
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_lavender
 TARGET_RELEASETOOLS_EXTENSIONS := $(DT_PATH)
 
-# Renderscript
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 # RIL
 PROTOBUF_SUPPORTED := true
 
