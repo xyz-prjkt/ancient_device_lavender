@@ -33,6 +33,9 @@ $(call inherit-product, device/xiaomi/lavender/device.mk)
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 $(call inherit-product, vendor/xiaomi/lavender/sdm660-vendor.mk)
 
+# Inherit Xiaomi Dirac
+$(call inherit-product, vendor/xiaomi/dirac/dirac.mk)
+
 # Inherit some common AOSP stuff.
 $(call inherit-product, vendor/ancient/config/common_full_phone.mk)
 
