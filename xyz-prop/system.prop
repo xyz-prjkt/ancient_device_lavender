@@ -1,3 +1,42 @@
+# Adaptive Display
+ro.qcom.ad=1
+ro.qcom.ad.calib.data=/system/etc/calib.cfg
+ro.qcom.ad.sensortype=2
+
+# Bluetooth
+persist.vendor.bt.a2dp.aac_whitelist=false
+ro.bluetooth.library_name=libbluetooth_qti.so
+vendor.bluetooth.soc=cherokee
+
+# Camera
+persist.bokeh.switch.lux=290
+persist.flash.low.lux=390
+persist.imx376_sunny.low.lux=310
+persist.imx376_sunny.light.lux=280
+persist.imx376_ofilm.low.lux=310
+persist.imx376_ofilm.light.lux=280
+
+# Charger
+ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
+
+# Dirac algo tsx 9/12
+persist.dirac.acs.controller=qem
+persist.dirac.acs.storeSettings=1
+persist.dirac.acs.ignore_error=1
+
+# Eyecare
+ro.eyecare.brightness.threshold=3
+ro.eyecare.brightness.level=8
+ro.hist.brightness.threshold=5
+
+# Radio
+DEVICE_PROVISIONED=1
+ril.subscription.types=NV,RUIM
+
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
+
 ro.sys.fw.dex2oat_thread_count=8
 audio.safemedia.bypass=true
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam
