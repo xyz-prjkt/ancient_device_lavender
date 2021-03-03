@@ -1,8 +1,3 @@
-# Adaptive Display
-ro.qcom.ad=1
-ro.qcom.ad.calib.data=/system/etc/calib.cfg
-ro.qcom.ad.sensortype=2
-
 # ART
 dalvik.vm.dex2oat64.enabled=true
 ro.vendor.qti.am.reschedule_service=true
@@ -112,14 +107,11 @@ persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.bluetooth.bluetooth_audio_hal.disabled=false
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=cherokee
-persist.vendor.bt.a2dp.aac_whitelist=false
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.bluetooth.a2dp_offload.disabled=true
-ro.bluetooth.library_name=libbluetooth_qti.so
 ro.bluetooth.a2dp_offload.supported=false
 vendor.audio.feature.a2dp_offload.enable=false
-vendor.bluetooth.soc=cherokee
 
 # Camera
 persist.camera.privapp.list=org.codeaurora.snapcam
@@ -141,16 +133,6 @@ persist.camera.mainswitch.threshold=419
 persist.camera.set.afd=4
 persist.camera.stats.test=0
 persist.sys.exif.make=Xiaomi
-persist.radio.VT_CAM_INTERFACE=2
-ro.eyecare.brightness.threshold=3
-ro.eyecare.brightness.level=8
-ro.hist.brightness.threshold=5
-persist.bokeh.switch.lux=290
-persist.flash.low.lux=390
-persist.imx376_sunny.low.lux=310
-persist.imx376_sunny.light.lux=280
-persist.imx376_ofilm.low.lux=310
-persist.imx376_ofilm.light.lux=280
 persist.vendor.camera.multicam.hwsync=TRUE
 persist.vendor.camera.multicam.fpsmatch=TRUE
 persist.vendor.camera.enableAdvanceFeatures=0x347
@@ -186,17 +168,8 @@ persist.vendor.imx376_ofilm.light.lux=275
 persist.vendor.bokeh.switch.lux=290
 persist.vendor.camera.exif.make=Xiaomi
 
-# Charger
-ro.charger.disable_init_blank=true
-ro.charger.enable_suspend=true
-
 # Codec2 switch
 debug.media.codec2=2
-
-# Dirac algo tsx 9/12
-persist.dirac.acs.controller=qem
-persist.dirac.acs.storeSettings=1
-persist.dirac.acs.ignore_error=1
 
 # Display
 debug.sf.latch_unsignaled=1
@@ -247,7 +220,7 @@ ro.lmk.critical=0
 ro.lmk.critical_upgrade=false
 ro.lmk.upgrade_pressure=100
 ro.lmk.downgrade_pressure=100
-ro.lmk.kill_heaviest_task=true\
+ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=100
 ro.lmk.use_minfree_levels=true
 
@@ -294,8 +267,6 @@ ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.use_data_netmgrd=true
 persist.vendor.iwlan.enable=true
 persist.vendor.radio.add_power_save=1
-DEVICE_PROVISIONED=1
-ril.subscription.types=NV,RUIM
 telephony.lteOnCdmaDevice=1
 
 # Rendering
@@ -336,6 +307,3 @@ persist.sys.wfd.virtual=0
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=180
 ro.zram.periodic_wb_delay_hours=24
-
-# Zygote preforking
-persist.device_config.runtime_native.usap_pool_enabled=true
