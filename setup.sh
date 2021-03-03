@@ -1,4 +1,4 @@
-git clone https://github.com/xyz-prjkt/ancient_vendor_lavender ../../../vendor/xiaomi/lavender -b 11
+git clone https://github.com/xyz-prjkt/ancient_vendor_lavender ../../../vendor/xiaomi/lavender -b 11-LA.UM.9.6.2.r1-03300-89xx.0
 git clone https://github.com/stormbreaker-project/kernel_xiaomi_lavender ../../../kernel/xiaomi/lavender -b eas-oldcam
 git clone https://github.com/xyz-prjkt/hw_audio ../../../hardware/qcom-caf/xyz-sdm660/audio -b 11-sdm660
 git clone https://github.com/xyz-prjkt/hw_media ../../../hardware/qcom-caf/xyz-sdm660/media -b 11-sdm660
