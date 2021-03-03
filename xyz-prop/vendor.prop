@@ -326,7 +326,7 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 sys.thermal.data.path=/data/vendor/thermal/
 
 # WFD
-persist.debug.wfd.enable=1
+persist.debug.wfd.enable=0
 persist.sys.wfd.virtual=0
 
 # ZRAM
