@@ -54,3 +54,6 @@ vendor.display.lcd_density              u:object_r:vendor_default_prop:s0
 
 # Accent Picker
 persist.sys.theme.accentcolor			u:object_r:theme_prop:s0
+
+# IR
+ro.lirc.dev								u:object_r:lirc_prop:s0
