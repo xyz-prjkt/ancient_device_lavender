@@ -5,3 +5,9 @@ get_prop({ appdomain -isolated_app }, mlipay_prop)
 get_prop({ appdomain -isolated_app }, hal_fingerprint_prop)
 get_prop({ appdomain -isolated_app }, ifaa_prop)
 get_prop({ appdomain -isolated_app }, vendor_fp_prop)
+
+# Accent Picker
+get_prop({ appdomain -isolated_app }, theme_prop)
+
+# IR
+get_prop({ appdomain -isolated_app }, lirc_prop)
