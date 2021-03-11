@@ -47,12 +47,6 @@ using android::base::SetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-char const *heapmaxfree;
-
 void property_override_triple(char const product_prop[], char const system_prop[], char const vendor_prop[],
     char const value[])
 {
