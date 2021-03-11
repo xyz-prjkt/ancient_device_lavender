@@ -47,6 +47,16 @@ using android::base::SetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 
+void property_override(string prop, string value)
+{
+    auto pi = (prop_info*) __system_property_find(prop.c_str());
+
+    if (pi != nullptr)
+        __system_property_update(pi, value.c_str(), value.size());
+    else
+        __system_property_add(prop.c_str(), prop.size(), value.c_str(), value.size());
+}
+
 void property_override_triple(char const product_prop[], char const system_prop[], char const vendor_prop[],
     char const value[])
 {
