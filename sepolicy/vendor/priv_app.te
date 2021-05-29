@@ -1,3 +1,0 @@
-allow priv_app blkio_dev:dir search;
-
-get_prop(priv_app, theme_prop)
